@@ -1,27 +1,23 @@
-a=10
-b=20
+echo “Enter two number”
 
-val=`expr $a + $b`
-echo "a + b : $val"
+read a b
 
-val=`expr $a - $b`
-echo "a - b : $val"
+echo “1.Add 2.Sub 3.Mul 4.Div 5.Exit”
 
-val=`expr $a \* $b`
-echo "a * b : $val"
+read op
 
-val=`expr $b / $a`
-echo "b / a : $val"
+case $op in
 
-val=`expr $b % $a`
-echo "b % a : $val"
+1) expr ‘$c=$a+$b’ ;;
 
-if [ $a == $b ]
-then
-   echo "a is equal to b"
-fi
+2) expr ‘$c=$a-$b’ ;;
 
-if [ $a != $b ]
-then
-   echo "a is not equal to b"
-fi
+3) expr ‘$c=$a\*$b’ ;;
+
+4) expr ‘$c=$a/$b’ ;;
+
+5) exit
+
+esac
+
+echo $c
